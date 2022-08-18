@@ -18,8 +18,8 @@ class Controller
 
     public function jsonFromFile(string $filePath)
     {
-        $content = file_get_contents($filePath);
-        return json_encode($content);
+        // todo : if file is not json ?
+        return file_get_contents($filePath);;
     }
 
     public function getMiddlewares()
