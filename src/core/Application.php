@@ -19,7 +19,7 @@ class Application
     // public Database $db;
     public $userClass;
 
-    public function __construct($rootPath,array $config)
+    public function __construct($rootPath)
     {
         self::$rootPath = $rootPath;
         self::$app = $this;
@@ -51,19 +51,6 @@ class Application
     public function setController(Controller $controller): void 
     {
         $this->controller = $controller;
-    }
-
-    public function login(UserModel $user)
-    {
-       $this->user = $user;
-       $primaryKey = $this->user->primaryKey();
-       $this->session->set('user', $user->$primaryKey);
-       return true;
-    }
-
-    public function logout()
-    {
-        $this->session->remove('user');
     }
 
     public function triggerEvent($eventName)
