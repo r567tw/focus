@@ -62,7 +62,7 @@ class Router
             $callback[0] = $controller;
             
             foreach ($controller->getMiddlewares() as $middleware) {
-                $middleware->next();
+                $middleware->execute();
             }
         }
         
