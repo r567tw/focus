@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "r567tw\\focus\\": "./"
+            "r567tw\\focus\\": "./src"
         }
     }
 }
