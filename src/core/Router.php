@@ -1,6 +1,6 @@
 <?php
 
-namespace r567tw\focus;
+namespace r567tw\focus\core;
 
 use r567tw\focus\exceptions\NotFoundException;
 
