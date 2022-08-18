@@ -48,4 +48,14 @@ class Request
 
         return $body;
     }
+
+    public function header(string $key)
+    {
+        $header = strtoupper($key);
+        if (isset($_SERVER["HTTP_{$header}"])){
+            return $_SERVER["HTTP_{$header}"];
+        } else {
+            return null;
+        }
+    }
 }

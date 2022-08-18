@@ -35,4 +35,9 @@ class Controller
     {
         return $this->middlewares;
     }
+
+    public function registMiddleWare(BaseMiddleware $middleware)
+    {
+        $this->middlewares[] = $middleware;
+    }
 }

@@ -61,10 +61,9 @@ class Router
             $controller->action = $callback[1];
             $callback[0] = $controller;
             
-            // Todo: middlewares
-            // foreach ($controller->getMiddlewares() as $middleware) {
-            //     $middleware->next();
-            // }
+            foreach ($controller->getMiddlewares() as $middleware) {
+                $middleware->next();
+            }
         }
         
         $this->response->setStatusCode(200);
