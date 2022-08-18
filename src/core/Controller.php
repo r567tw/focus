@@ -8,9 +8,12 @@ class Controller
     protected array $middlewares = [];
     public string $action = '';
 
-    public function render($view , $params=[])
+    public function render($view ,array|string $params=[])
     {
-        return $params;
+        if (is_array($params)){
+            return json_encode($params);
+        }
+        return json_encode(["data"=> $params]);
     }
 
     public function getMiddlewares()
