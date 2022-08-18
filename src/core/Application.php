@@ -15,10 +15,8 @@ class Application
     public Request $request;
     public Response $response;
     public Session $session;
-    public View $view;
     public ?Controller $controller = null;
-    public Database $db;
-    public ?UserModel $user = null;
+    // public Database $db;
     public $userClass;
 
     public function __construct($rootPath,array $config)
@@ -29,26 +27,12 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->session = new Session();
-        $this->view = new View();
-        $this->db = new Database($config['db']);
-        $this->userClass = $config['userClass'];
-
-        $primaryValue =  $this->session->get('user');
-        if ($primaryValue){
-            $primaryKey = $this->userClass::primaryKey();
-            $primaryValue =  $this->session->get('user');
-            $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
-        }
-    }
-
-    public static function isGuest()
-    {
-        return !self::$app->user;
+        // $this->db = new Database($config['db']);
     }
 
     public function run()
     {
-        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
+        // $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Exception $ex) {

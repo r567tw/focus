@@ -46,13 +46,15 @@ class Router
             Application::$app->controller = $controller;
             $controller->action = $callback[1];
             $callback[0] = $controller;
-
-            foreach ($controller->getMiddlewares() as $middleware) {
-                $middleware->next();
-            }
+            
+            // Todo: middlewares
+            // foreach ($controller->getMiddlewares() as $middleware) {
+            //     $middleware->next();
+            // }
         }
         
         $this->response->setStatusCode(200);
+        $this->response->setHeader('Content-Type: application/json; charset=utf-8');
         return call_user_func($callback, $this->request,$this->response);
     }
 

@@ -12,4 +12,9 @@ class Controller
     {
         return Application::$app->view->renderView($view, $params);
     }
+
+    public function getMiddlewares()
+    {
+        return $this->middlewares;
+    }
 }

@@ -10,6 +10,11 @@ class Response
         http_response_code($code);
     }
 
+    public function setHeader(string $headers)
+    {
+        header($headers);
+    }
+
     public function redirect(string $url)
     {
         header("location: {$url}");
