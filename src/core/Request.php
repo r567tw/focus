@@ -1,6 +1,6 @@
 <?php
 
-namespace r567tw\phpmvc;
+namespace r567tw\focus;
 
 class Request
 {

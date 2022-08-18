@@ -1,5 +1,5 @@
 <?php
-namespace r567tw\phpmvc\exceptions;
+namespace r567tw\focus\exceptions;
 
 
 class ForbiddenException extends \Exception

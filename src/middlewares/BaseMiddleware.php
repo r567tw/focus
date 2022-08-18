@@ -1,5 +1,5 @@
 <?php
-namespace r567tw\phpmvc\middlewares;
+namespace r567tw\focus\middlewares;
 
 
 abstract class BaseMiddleware

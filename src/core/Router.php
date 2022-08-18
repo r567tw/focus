@@ -1,8 +1,8 @@
 <?php
 
-namespace r567tw\phpmvc;
+namespace r567tw\focus;
 
-use r567tw\phpmvc\exceptions\NotFoundException;
+use r567tw\focus\exceptions\NotFoundException;
 
 class Router
 {

@@ -1,9 +1,9 @@
 <?php
-namespace r567tw\phpmvc\middlewares;
+namespace r567tw\focus\middlewares;
 
-use r567tw\phpmvc\Application;
-use r567tw\phpmvc\exceptions\ForbiddenException;
-use r567tw\phpmvc\middlewares\BaseMiddleware;
+use r567tw\focus\Application;
+use r567tw\focus\exceptions\ForbiddenException;
+use r567tw\focus\middlewares\BaseMiddleware;
 
 class AuthMiddleware extends BaseMiddleware
 {
