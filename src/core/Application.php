@@ -14,9 +14,7 @@ class Application
     public Router $router;
     public Request $request;
     public Response $response;
-    // public Session $session;
     public ?Controller $controller = null;
-    // public Database $db;
     public $userClass;
 
     public function __construct($rootPath)
@@ -26,15 +24,14 @@ class Application
         $this->router = new Router();
         $this->request = new Request();
         $this->response = new Response();
-        // $this->session = new Session();
-        // $this->db = new Database($config['db']);
     }
 
     public function run()
     {
-        // $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
+            $this->triggerEvent(self::EVENT_AFTER_REQUEST);
         } catch (\Exception $ex) {
             $this->response->setStatusCode($ex->getCode());
             $this->response->setHeader('Content-Type: application/json; charset=utf-8');     
