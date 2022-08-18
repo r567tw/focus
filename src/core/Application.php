@@ -36,8 +36,10 @@ class Application
         try {
             echo $this->router->resolve();
         } catch (\Exception $ex) {
-            $this->response->setStatusCode($ex->getCode());     
-            echo $this->view->renderView("_error",[
+            $this->response->setStatusCode($ex->getCode());
+            $this->response->setHeader('Content-Type: application/json; charset=utf-8');     
+            echo json_encode([
+                'error' => $ex->getCode(),
                 'exception' => $ex
             ]);
         }
