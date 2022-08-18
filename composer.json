@@ -1,6 +1,6 @@
 {
-    "name": "r567tw/phpmvc-core",
-    "description": "php framework by practice",
+    "name": "r567tw/focus",
+    "description": "php framework api only",
     "authors": [
         {
             "name": "r567tw",
@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "r567tw\\phpmvc\\": "./"
+            "r567tw\\focus\\": "./"
         }
     }
 }
