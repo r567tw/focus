@@ -8,7 +8,7 @@ class Controller
     protected array $middlewares = [];
     public string $action = '';
 
-    public function json($view ,array|string $params=[])
+    public function json(array|string $params=[])
     {
         if (is_array($params)){
             return json_encode($params);
