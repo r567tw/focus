@@ -17,7 +17,6 @@ class Router
         $this->response = new Response();
     }
 
-
     public function get($path, $callback)
     {
         $this->routes["GET"][$path] = $callback;
@@ -26,6 +25,21 @@ class Router
     public function post($path, $callback)
     {
         $this->routes["POST"][$path] = $callback;
+    }
+
+    public function put($path, $callback)
+    {
+        $this->routes["PUT"][$path] = $callback;
+    }
+
+    public function patch($path, $callback)
+    {
+        $this->routes["PATCH"][$path] = $callback;
+    }
+
+    public function delete($path, $callback)
+    {
+        $this->routes["DELETE"][$path] = $callback;
     }
 
     public function resolve()
