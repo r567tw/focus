@@ -20,7 +20,6 @@ class Controller
 
     public function jsonFromFile(string $filePath)
     {
-        // todo : if file is not json ?
         if (pathinfo($filePath, PATHINFO_EXTENSION) !== 'json'){
             throw new NotJsonException();
         }

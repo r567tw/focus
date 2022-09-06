@@ -1,7 +1,9 @@
 <?php
-
 namespace r567tw\focus\core;
-
+/**
+ * @author r567tw <r567tw@gmail.com>
+ * @package core
+ */
 class Application
 {
     const EVENT_BEFORE_REQUEST = 'beforeRequest';
@@ -28,10 +30,10 @@ class Application
 
     public function run()
     {
+        // trigger Before Request 的活動
         $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
-            $this->triggerEvent(self::EVENT_AFTER_REQUEST);
         } catch (\Exception $ex) {
             $this->response->setStatusCode($ex->getCode());
             $this->response->setHeader('Content-Type: application/json; charset=utf-8');     
@@ -40,6 +42,8 @@ class Application
                 'exception' => $ex
             ]);
         }
+        // trigger After Request 的活動
+        $this->triggerEvent(self::EVENT_AFTER_REQUEST);
     }
 
     public function getController(): Controller
