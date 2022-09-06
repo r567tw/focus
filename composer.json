@@ -1,6 +1,7 @@
 {
     "name": "r567tw/focus",
     "description": "php framework api only",
+    "license": "MIT",
     "authors": [
         {
             "name": "r567tw",
