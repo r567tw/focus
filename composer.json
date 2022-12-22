@@ -1,6 +1,6 @@
 {
     "name": "r567tw/focus",
-    "description": "php framework api only",
+    "description": "the smallest php framework api only / for custom",
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,10 @@
     "autoload": {
         "psr-4": {
             "r567tw\\focus\\": "./src"
-        }
+        },
+        "files": [
+            "app/helpers/helper.php"
+        ]
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

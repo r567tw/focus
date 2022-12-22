@@ -3,7 +3,10 @@
 namespace r567tw\focus\core;
 
 use r567tw\focus\exceptions\NotFoundException;
-
+/**
+ * @author r567tw <r567tw@gmail.com>
+ * @package core
+ */
 class Router
 {
 

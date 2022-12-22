@@ -30,11 +30,12 @@ class Application
 
     public function run()
     {
-        // trigger Before Request 的活動
+        // trigger Before Request
         $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Exception $ex) {
+            // response always json
             $this->response->setStatusCode($ex->getCode());
             $this->response->setHeader('Content-Type: application/json; charset=utf-8');     
             echo json_encode([
@@ -42,7 +43,7 @@ class Application
                 'exception' => $ex
             ]);
         }
-        // trigger After Request 的活動
+        // trigger After Request
         $this->triggerEvent(self::EVENT_AFTER_REQUEST);
     }
 

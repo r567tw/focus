@@ -1,7 +1,10 @@
 <?php
 
 namespace r567tw\focus\core;
-
+/**
+ * @author r567tw <r567tw@gmail.com>
+ * @package core
+ */
 class Request
 {
     public function getPath()
@@ -32,14 +35,14 @@ class Request
     public function body()
     {
         $body = [];
-        if ($this->method() === 'GET')
+        if ($this->isGet())
         {
             foreach ($_GET as $key => $value) {
                 $body[$key] = filter_input(INPUT_GET,$key, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
-        if ($this->method() === 'POST') {
+        if ($this->isPost()) {
             foreach ($_POST as $key => $value) {
                 $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
             }

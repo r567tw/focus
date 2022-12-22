@@ -2,7 +2,10 @@
 
 namespace r567tw\focus\core;
 
-
+/**
+ * @author r567tw <r567tw@gmail.com>
+ * @package core
+ */
 class Response
 {
     public function setStatusCode(int $code)

@@ -2,7 +2,10 @@
 namespace r567tw\focus\middlewares;
 
 use r567tw\focus\core\Application;
-
+/**
+ * @author r567tw <r567tw@gmail.com>
+ * @package middlewares
+ */
 abstract class BaseMiddleware
 {
     public array $actions =[];
