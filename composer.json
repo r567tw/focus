@@ -16,7 +16,7 @@
             "r567tw\\focus\\": "./src"
         },
         "files": [
-            "r567tw/focus/helpers/helper.php"
+            "src/helpers/helper.php"
         ]
     },
     "require-dev": {
