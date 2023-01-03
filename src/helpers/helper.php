@@ -1,12 +1,12 @@
 <?php
-namespace r567tw\focus\helpers;
+use r567tw\focus\core\Response;
 /**
  * @author r567tw <r567tw@gmail.com>
  * @package helpers
  */
-if (! function_exists('hello')) {
-    function hello($name = 'helper')
+if (! function_exists('response')) {
+    function response()
     {
-        echo "Hello,{$name}";
+        return new Response();
     }
 }
